@@ -1,5 +1,23 @@
 # OrbitGuard AI
+## 🚀 Live Demo
 
+👉 *[Launch OrbitGuard AI](orbitguard-ai.vercel.app)*
+
+👉 **[View Source Code](https://github.com/jaswanth1823/-orbitguard-ai)**
+🤖 How IBM Bob Was Used
+IBM Bob was used as the AI-assisted development environment to accelerate the development of OrbitGuard AI.
+IBM Bob helped with:
+Generating and modifying application components
+Building the Next.js application structure
+Creating API routes
+Implementing the satellite/orbital data integration
+Integrating the N2YO provider
+Maintaining the simulation fallback system
+Creating UI components for mission monitoring
+Connecting application functionality with Supabase
+Integrating the AI-powered Mission Copilot
+Debugging and improving application functionality
+Preparing the application for production deployment
 > **AI-powered spacecraft mission monitoring and decision-support platform**
 
 OrbitGuard AI transforms raw spacecraft telemetry into understandable, actionable mission intelligence. Designed for space exploration operations teams, it combines real-time telemetry monitoring, statistical anomaly detection, and IBM Granite AI to provide comprehensive mission situational awareness.

@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #080d1a;
+  --bg-secondary: #0d1528;
+  --bg-card: #0f1a2e;
+  --border: #1e2d4a;
+  --border-light: #2a3d5e;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --accent: #3b82f6;
+  --accent-dim: rgba(59, 130, 246, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-feature-settings: "cv11", "ss01";
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-light);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b4d6e;
+}
+
+/* Custom selection */
+::selection {
+  background: rgba(59, 130, 246, 0.3);
+  color: white;
+}
+
+/* Status indicator pulse */
+@keyframes status-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.status-indicator-critical {
+  animation: status-pulse 1.5s ease-in-out infinite;
+}
+
+/* Chart tooltip */
+.recharts-tooltip-wrapper .recharts-default-tooltip {
+  background: #0f1a2e !important;
+  border: 1px solid #1e2d4a !important;
+  border-radius: 6px !important;
+  padding: 8px 12px !important;
+}
+
+/* Focus ring */
+*:focus-visible {
+  outline: 2px solid rgba(59, 130, 246, 0.6);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+.card-hover:hover {
+  border-color: var(--border-light);
+  background-color: #112236;
+}
+
+/* Monospace data values */
+.data-value {
+  font-family: var(--font-mono), Consolas, monospace;
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+}
+
+/* Loading skeleton */
+@keyframes skeleton-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #0f1a2e 25%,
+    #1a2a42 50%,
+    #0f1a2e 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+/* Blinking cursor for terminal effect */
+.cursor-blink::after {
+  content: '▊';
+  animation: blink 1.1s step-end infinite;
+  color: #3b82f6;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Subtle grid pattern for backgrounds */
+.grid-bg {
+  background-image: 
+    linear-gradient(rgba(30, 45, 74, 0.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 45, 74, 0.4) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Status dot */
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.status-dot-nominal { background-color: #10b981; box-shadow: 0 0 6px rgba(16, 185, 129, 0.5); }
+.status-dot-warning { background-color: #f59e0b; box-shadow: 0 0 6px rgba(245, 158, 11, 0.5); }
+.status-dot-critical { background-color: #ef4444; box-shadow: 0 0 6px rgba(239, 68, 68, 0.5); animation: status-pulse 1.5s ease-in-out infinite; }
+.status-dot-offline { background-color: #64748b; }
